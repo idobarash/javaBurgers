@@ -1,0 +1,6 @@
+com/training/model/enums/OrderPhase.class
+com/training/model/enums/EntityStatus.class
+com/training/model/enums/PhoneType.class
+com/training/model/dto/KeyValueDto.class
+com/training/dao/base/GenericDao.class
+com/training/model/enums/ItemType.class
