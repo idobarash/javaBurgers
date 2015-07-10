@@ -4,14 +4,11 @@ package com.tikal.training.application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate3.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
-import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -54,25 +51,6 @@ public class BurgersBeanConfiguration {
 
         return sessionFactory;
     }
-
-
-//    @Bean
-//    public LocalContainerEntityManagerFactoryBean entityManagerFactory(
-//            DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
-//        LocalContainerEntityManagerFactoryBean lef = new LocalContainerEntityManagerFactoryBean();
-//        lef.setDataSource(dataSource);
-//        lef.setJpaVendorAdapter(jpaVendorAdapter);
-//        lef.setPackagesToScan(new String[] { "com.cooladata.common","com.cooladata.acl", "com.cooladata.project","com.cooladata.website.entity" });
-//        return lef;
-//    }
-
-//    @Bean
-//    @Primary
-//    public PlatformTransactionManager transactionManager() {
-//        HibernateTransactionManager txManager = new HibernateTransactionManager(sessionFactory);
-//        txManager.setNestedTransactionAllowed(true);
-//        return txManager;
-//    }
 
 
     @SuppressWarnings("serial")

@@ -5,13 +5,11 @@ import com.tikal.training.services.ExampleBusinessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 
 @Service
 @Path("/example")
+@Produces("application/json")
 public class ExampleRestService {
 
     @Autowired
@@ -26,11 +24,18 @@ public class ExampleRestService {
 
 
     @POST
-    @Path("/{id}")
     public boolean testSave(ExampleEntity entity) {
 
         exampleBusinessService.save(entity);
 
         return true;
+    }
+
+    @PUT
+    public ExampleEntity updateEntity(ExampleEntity entity) {
+
+        exampleBusinessService.update(entity);
+
+        return exampleBusinessService.getById(entity.getId());
     }
 }
