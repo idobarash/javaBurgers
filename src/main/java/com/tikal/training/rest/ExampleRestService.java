@@ -8,7 +8,7 @@ import javax.ws.rs.PathParam;
 
 @Service
 @Path("/test")
-public class TestRestService {
+public class ExampleRestService {
 
     @GET
     @Path("/{id}")
